@@ -35,8 +35,7 @@ const upload = multer({storage:storage})
 //creating upload endpoint for images
 app.use('/images',express.static('upload/images'))
 app.post('/upload',upload.single('product'),(req,res)=>{
-   res.json({ success: true, image_url: `http://localhost:${PORT}/images/${req.file.filename}` })
-
+   res.json({ success: true, image_url: `https://full-stack-e-commerce-gaf1.onrender.com/images/${req.file.filename}` })
 
 })
 
