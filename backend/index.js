@@ -205,10 +205,6 @@ app.post('/getcart',fetchUser,async(req,res)=>{
 })
 
 
-//app.listen(PORT,(e)=>{
-  //  console.log('serverrunning at '+PORT)
-//})
-
-// ... your routes ...
-
-module.exports = app;
+app.listen(PORT,(e)=>{
+  console.log('serverrunning at '+PORT)
+})
