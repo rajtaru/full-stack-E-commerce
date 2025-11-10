@@ -18,7 +18,7 @@ const ListProduct = () => {
   useEffect(()=>{fetchInfo()},[])
 
   const removeProduct = async (id)=>{
-    await fetch('http://localhost:4000/removeproduct',{
+    await fetch('https://full-stack-e-commerce-gaf1.onrender.com/removeproduct',{
       method:'POST',
       headers:{
         Accept:'application/json',
