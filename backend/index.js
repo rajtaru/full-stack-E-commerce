@@ -35,7 +35,11 @@ const upload = multer({storage:storage})
 //creating upload endpoint for images
 app.use('/images',express.static('upload/images'))
 app.post('/upload',upload.single('product'),(req,res)=>{
-    res.json({success:true,image_url:`http://localhost:${PORT}/images/${req.file.filename}`})
+    res.json({
+  success: true,
+  image_url: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+})
+
 })
 
 //schema for creating products
@@ -201,6 +205,10 @@ app.post('/getcart',fetchUser,async(req,res)=>{
 })
 
 
-app.listen(PORT,(e)=>{
-    console.log('serverrunning at '+PORT)
-})
+//app.listen(PORT,(e)=>{
+  //  console.log('serverrunning at '+PORT)
+//})
+
+// ... your routes ...
+
+module.exports = app;
