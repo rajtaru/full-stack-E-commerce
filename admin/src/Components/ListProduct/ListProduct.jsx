@@ -9,7 +9,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([])
 
   const fetchInfo = async ()=>{
-    await fetch('http://localhost:4000/allproducts')
+    await fetch('https://full-stack-e-commerce-gaf1.onrender.com/allproducts')
     .then((res)=>res.json()).then((data)=>{
       setAllProducts(data.data)
     })
